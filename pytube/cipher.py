@@ -261,7 +261,7 @@ def get_throttling_function_name(js: str) -> str:
     :returns:
         The name of the function used to compute the throttling parameter.
     """
-   function_patterns = [
+    function_patterns = [
     # https://github.com/ytdl-org/youtube-dl/issues/29326#issuecomment-865985377
     # https://github.com/yt-dlp/yt-dlp/commit/48416bc4a8f1d5ff07d5977659cb8ece7640dcd8
     # var Bpa = [iha];
@@ -272,7 +272,7 @@ def get_throttling_function_name(js: str) -> str:
     r'a\.[a-zA-Z]\s*&&\s*\([a-z]\s*=\s*a\.get\("n"\)\)\s*&&.*?\|\|\s*([a-z]+)',
     r'\([a-z]\s*=\s*([a-zA-Z0-9$]+)(\[\d+\])?\([a-z]\)',
     r'\([a-z]\s*=\s*([a-zA-Z0-9$]+)(\[\d+\])\([a-z]\)',
-]
+    ]
     logger.debug('Finding throttling function name')
     for pattern in function_patterns:
         regex = re.compile(pattern)
