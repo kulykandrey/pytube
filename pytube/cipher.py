@@ -695,3 +695,4 @@ def map_functions(js_func: str) -> Callable:
         if re.search(pattern, js_func):
             return fn
     raise RegexMatchError(caller="map_functions", pattern="multiple")
+
